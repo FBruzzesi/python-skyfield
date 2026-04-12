@@ -20,8 +20,8 @@ COMET_URL: str
 _COMET_COLUMNS: list[tuple[str, tuple[int, int]]]
 _COMET_FAST_COLUMNS: tuple[str, ...]
 _COMET_SEP: str
-_fast_comet_re: re.Pattern[bytes]
-_fast_comet_sub: bytes
+_fast_comet_re: re.Pattern[bytes] | None
+_fast_comet_sub: bytes | None
 
 def load_mpcorb_dataframe(fobj: "BinaryIO") -> "pd.DataFrame": ...
 def mpcorb_orbit(row: "pd.Series", ts: "Timescale", gm_km3_s2: float) -> "_KeplerOrbit": ...
